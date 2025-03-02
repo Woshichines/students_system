@@ -1,0 +1,45 @@
+#ifndef HEAD
+#define HEAD
+
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <list>
+#include <array>
+#include <vector>
+#include <algorithm> // For std::sort, std::find, etc.
+#include <fstream>   // For file input/output operations
+#include <map>       // For std::map
+#include <set>       // For std::set
+#include <queue>     // For std::queue
+#include <stack>     // For std::stack
+#include <tuple>     // For std::tuple
+#include <utility>   // For std::pair, std::move, etc.
+#include <filesystem>
+#include <ctime>
+#include <memory>
+
+using namespace std;
+
+int 求级数()
+{
+    long long mytime = time(NULL);
+    long long y = 31536000;
+    long long year = mytime / y;
+    int int_year = static_cast<int>(year);
+    return int_year + 1970;
+}
+
+
+
+class Teachers;
+class Students;
+class Schools;
+class Classrooms;
+
+// Schools *new_school = new Schools;
+// Teachers *new_teacher = new Teachers;
+// Classrooms *new_classroom = new Classrooms;
+
+#endif

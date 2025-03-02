@@ -1,0 +1,49 @@
+#ifndef STUDENTS
+#define STUDENTS
+
+#include "./head"
+
+using namespace std;
+
+class Students
+{   
+    private:
+        void* m_校区;      
+        void* m_班级;
+        string m_姓名;      
+        int m_学号;        
+        string m_身份证号; 
+        string m_家庭住址;
+
+    private:
+        int m_分数 = 0;
+
+    public:
+        Students(string 姓名, void* 校区, void* 班级, int 学号 , 
+                 string 身份证号, string 家庭住址);
+        int 加分(int 分数);
+        int 减分(int 分数);
+        int 输出分数();
+};
+
+Students::Students(string 姓名, void* 校区 = NULL, void* 班级 = NULL, int 学号 = 0, 
+                 string 身份证号 = "", string 家庭住址 = ""){}
+
+int Students::加分(int 分数 = 1)
+{
+    m_分数 += 分数;
+    return 0;
+}
+
+int Students::减分(int 分数 = 1)
+{
+    m_分数 -= 分数;
+    return 0;
+}
+
+int Students::输出分数()
+{
+    return m_分数;
+}
+
+#endif
