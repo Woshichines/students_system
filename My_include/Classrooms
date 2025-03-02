@@ -50,7 +50,7 @@ int Classrooms::打印届数()
 int Classrooms::打印其他()
 {
     cout << m_级数<< endl
-        << m_总学生数量 << endl
+        << m_学生数 << endl
         << m_班名 << endl
         << m_班数 << endl;
     return 0;

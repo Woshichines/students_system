@@ -13,6 +13,26 @@ class Teachers
 
 
     public:
-    Teachers(string 老师姓名, string 身份证号){}
+    Teachers(string 老师姓名, string 身份证号 = "", string 家庭住址 = "")
+    :m_老师姓名(老师姓名) ,
+    m_身份证号(身份证号),
+    m_家庭住址(家庭住址)
+    {}
+
+    int 加分(shared_ptr<Students> 被操作学生, int 分数);
+    int 减分(shared_ptr<Students> 被操作学生, int 分数);
 };
+
+int Teachers::加分(shared_ptr<Students> 被操作学生, int 分数 = 1)
+{
+    被操作学生 -> 加分(分数);
+    return 0;
+}
+
+int Teachers::减分(shared_ptr<Students> 被操作学生, int 分数 = 1)
+{
+    被操作学生 -> 减分(分数);
+    return 0;
+}
+
 #endif

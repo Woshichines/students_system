@@ -8,8 +8,8 @@ using namespace std;
 class Students
 {   
     private:
-        void* m_校区;      
-        void* m_班级;
+        shared_ptr<Schools> m_校区;      
+        shared_ptr<Classrooms> m_班级;
         string m_姓名;      
         int m_学号;        
         string m_身份证号; 
@@ -19,15 +19,29 @@ class Students
         int m_分数 = 0;
 
     public:
-        Students(string 姓名, void* 校区, void* 班级, int 学号 , 
-                 string 身份证号, string 家庭住址);
+        Students(string 姓名, 
+         shared_ptr<Schools> 校区 = NULL, 
+         shared_ptr<Classrooms> 班级 = NULL,
+         int 学号 = 0, 
+         string 身份证号 = "", 
+         string 家庭住址 = "")
+            : m_姓名(姓名), 
+            m_学号(学号), 
+            m_身份证号(身份证号), 
+            m_家庭住址(家庭住址)
+            {
+               m_校区 = 校区;
+               m_班级 = 班级;
+
+               
+            }
+
         int 加分(int 分数);
         int 减分(int 分数);
         int 输出分数();
 };
 
-Students::Students(string 姓名, void* 校区 = NULL, void* 班级 = NULL, int 学号 = 0, 
-                 string 身份证号 = "", string 家庭住址 = ""){}
+
 
 int Students::加分(int 分数 = 1)
 {
