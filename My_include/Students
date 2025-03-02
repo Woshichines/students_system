@@ -2,6 +2,7 @@
 #define STUDENTS
 
 #include "./head"
+#include "Classrooms"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ class Students
         string m_家庭住址;
 
     private:
-        int m_分数 = 0;
+        int m_分数[2] = {0, 0};
 
     public:
         Students(string 姓名, 
@@ -33,29 +34,29 @@ class Students
                m_校区 = 校区;
                m_班级 = 班级;
 
-               
+               班级 -> 增加学生();
             }
 
         int 加分(int 分数);
         int 减分(int 分数);
-        int 输出分数();
+        int* 输出分数();
 };
 
 
 
 int Students::加分(int 分数 = 1)
 {
-    m_分数 += 分数;
+    m_分数[0] += 分数;
     return 0;
 }
 
 int Students::减分(int 分数 = 1)
 {
-    m_分数 -= 分数;
+    m_分数[1] -= 分数;
     return 0;
 }
 
-int Students::输出分数()
+int* Students::输出分数()
 {
     return m_分数;
 }

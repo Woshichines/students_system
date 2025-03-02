@@ -12,7 +12,6 @@ class Classrooms
 
     private:
         Schools* m_校区;
-        Teachers* m_教师;
         int m_级数;
         int m_班数;
         string m_班名;
@@ -20,13 +19,11 @@ class Classrooms
 
     public:
         Classrooms(
-                    Schools *校区 = NULL, 
-                    Teachers *教师 = NULL, 
+                    Schools *校区 = NULL,  
                     int 级数 = 求级数(), 
-                    int 班数 = 1, 
+                    int 班数 = 0, 
                     string 班名 = 求级数()+"届新建班级")
                     :   m_校区(校区),
-                        m_教师(教师),
                         m_级数(级数),
                         m_班数(班数),
                         m_班名(班名),
@@ -37,9 +34,11 @@ class Classrooms
 
         int 打印其他();
 
+        int 增加学生();
+
 };
 
-
+int Classrooms::m_总学生数量 = 0;
 
 int Classrooms::打印届数()
 {
@@ -53,6 +52,14 @@ int Classrooms::打印其他()
         << m_学生数 << endl
         << m_班名 << endl
         << m_班数 << endl;
+    return 0;
+}
+
+int Classrooms::增加学生()
+{
+    m_学生数 += 1;
+    m_总学生数量 += 1;
+
     return 0;
 }
 

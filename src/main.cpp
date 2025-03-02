@@ -6,17 +6,25 @@
 using namespace std;
 
 int main()
-{
-    shared_ptr<Students> St(new Students("zqh"));
+{   
+    setlocale(LC_ALL, "zh_CN.UTF-8");
+
+    shared_ptr<Classrooms> Cl(new Classrooms());
+    shared_ptr<Students> St(new Students("zqh", NULL, Cl));
     shared_ptr<Teachers> Te(new Teachers("主任"));
+    
 
     St->减分();
-    cout << St->输出分数() << endl;
+    int *a = St->输出分数();
+    cout << a[0] << " " << a[1] << endl;
 
     Te->加分(St, 3);
-    cout << St->输出分数() << endl;
+    a = St->输出分数();
+    cout << a[0] << " " << a[1] << endl;
 
-    
+    Cl->打印其他();
+
+
 
     system("pause");
     return 0;
