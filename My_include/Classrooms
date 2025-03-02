@@ -16,16 +16,22 @@ class Classrooms
         int m_级数;
         int m_班数;
         string m_班名;
-        int 学生数;
+        int m_学生数;
 
     public:
         Classrooms(
-            Schools *校区 = NULL, 
-            Teachers *教师 = NULL, 
-            int 级数 = 求级数(), 
-            int 班数 = 1, 
-            string 班名 = 求级数()+"届新建班级"
-            );
+                    Schools *校区 = NULL, 
+                    Teachers *教师 = NULL, 
+                    int 级数 = 求级数(), 
+                    int 班数 = 1, 
+                    string 班名 = 求级数()+"届新建班级")
+                    :   m_校区(校区),
+                        m_教师(教师),
+                        m_级数(级数),
+                        m_班数(班数),
+                        m_班名(班名),
+                        m_学生数(0){}
+
 
         int 打印届数();
 
@@ -33,20 +39,7 @@ class Classrooms
 
 };
 
-Classrooms::Classrooms(
-    Schools *校区 = NULL, 
-    Teachers *教师 = NULL, 
-    int 级数 = 求级数(), 
-    int 班数 = 1, 
-    string 班名 = 求级数()+"届新建班级"
-    )
-    :   m_校区(校区),
-        m_教师(教师),
-        m_级数(级数),
-        m_班数(班数),
-        m_班名(班名),
-        学生数(0)
-{}
+
 
 int Classrooms::打印届数()
 {

@@ -1,4 +1,18 @@
 #ifndef TEACHERS
 #define TEACHERS
+#include "head"
 
+using namespace std;
+
+class Teachers
+{   
+    private:
+    string m_老师姓名;
+    string m_身份证号; 
+    string m_家庭住址;
+
+
+    public:
+    Teachers(string 老师姓名, string 身份证号){}
+};
 #endif
