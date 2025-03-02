@@ -1,5 +1,6 @@
-#include "head"
-#include "Schools"
-#include "Students"
-#include "Teachers"
-#include "Classrooms"
+#include "../My_include/head"
+#include "../My_include/Students"
+#include "../My_include/Schools"
+#include "../My_include/Teachers"
+#include "../My_include/Classrooms"
+
