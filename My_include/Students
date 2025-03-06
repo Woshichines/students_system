@@ -3,10 +3,12 @@
 
 #include "./head"
 #include "Classrooms"
+#include "Schools"
+#include "Teachers"
 
 using namespace std;
 
-class Students
+class Students : private enable_shared_from_this<Students>
 {   
     private:
         shared_ptr<Schools> m_校区;      
@@ -15,6 +17,7 @@ class Students
         int m_学号;        
         string m_身份证号; 
         string m_家庭住址;
+        shared_ptr<Students> self = shared_from_this();
 
     private:
         int m_分数[2] = {0, 0};
@@ -34,12 +37,16 @@ class Students
                m_校区 = 校区;
                m_班级 = 班级;
 
-               班级 -> 增加学生();
+               班级 -> 增加学生a(self);
             }
 
         int 加分(int 分数);
         int 减分(int 分数);
         int* 输出分数();
+        shared_ptr<Classrooms> 输出班级();
+        int 更改班级a(shared_ptr<Classrooms> 班级);
+        int 更改班级b(shared_ptr<Classrooms> 班级);
+        int 更改班级c(shared_ptr<Classrooms> 班级);
 };
 
 
@@ -59,6 +66,25 @@ int Students::减分(int 分数 = 1)
 int* Students::输出分数()
 {
     return m_分数;
+}
+
+shared_ptr<Classrooms> Students::输出班级()
+{
+    return m_班级;
+}
+
+int Students::更改班级c(shared_ptr<Classrooms> 班级)
+{
+    m_班级 -> 删除学生(self);
+    m_班级 = 班级;
+    auto a = m_班级 -> 输出学生列表();
+
+    if (! find_b(a.begin(), a.end(), self))
+    {
+        m_班级 -> 增加学生c(self);
+    }
+
+    return 0;
 }
 
 #endif

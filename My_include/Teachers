@@ -4,23 +4,37 @@
 
 using namespace std;
 
-class Teachers
+class Teachers : private enable_shared_from_this<Teachers>
 {   
     private:
     string m_老师姓名;
     string m_身份证号; 
     string m_家庭住址;
+    vector<shared_ptr<Classrooms>> m_所在班级;
+
+    private:
+    shared_ptr<Teachers> self = shared_from_this();
 
 
     public:
-    Teachers(string 老师姓名, string 身份证号 = "", string 家庭住址 = "")
+    Teachers(string 老师姓名, 
+            vector<shared_ptr<Classrooms>> 所在班级 = {}, 
+            string 身份证号 = "", 
+            string 家庭住址 = "" 
+           )
     :m_老师姓名(老师姓名) ,
     m_身份证号(身份证号),
-    m_家庭住址(家庭住址)
+    m_家庭住址(家庭住址),
+    m_所在班级(所在班级)
+    {}
+
+    ~Teachers()
     {}
 
     int 加分(shared_ptr<Students> 被操作学生, int 分数);
     int 减分(shared_ptr<Students> 被操作学生, int 分数);
+    int 添加班级a(shared_ptr<Classrooms> 班级);
+    int 添加班级b(shared_ptr<Classrooms> 班级);
 };
 
 int Teachers::加分(shared_ptr<Students> 被操作学生, int 分数 = 1)
@@ -32,6 +46,19 @@ int Teachers::加分(shared_ptr<Students> 被操作学生, int 分数 = 1)
 int Teachers::减分(shared_ptr<Students> 被操作学生, int 分数 = 1)
 {
     被操作学生 -> 减分(分数);
+    return 0;
+}
+
+int Teachers::添加班级a(shared_ptr<Classrooms> 班级)
+{
+    m_所在班级.push_back(班级);
+    return 0;
+}
+
+int Teachers::添加班级b(shared_ptr<Classrooms> 班级)
+{
+    m_所在班级.push_back(班级);
+    班级 -> 增加教师a(self);
     return 0;
 }
 
