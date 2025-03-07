@@ -1,3 +1,24 @@
+class Teachers;
+class Students;
+class Schools;
+class Classrooms;
+
+#ifndef STUDENTS
+#include "Students"
+#endif
+
+#ifndef TEACHERS
+#include "Teachers"
+#endif
+
+#ifndef CLASSROOMS
+#include "Classrooms"
+#endif
+
+#ifndef SCHOOLS
+#include "Schools"
+#endif
+
 #ifndef HEAD
 #define HEAD
 
@@ -19,10 +40,6 @@
 #include <ctime>
 #include <memory>
 
-#include "Students"
-#include "Teachers"
-#include "Classrooms"
-
 using namespace std;
 
 int 求级数()
@@ -34,21 +51,6 @@ int 求级数()
     return int_year + 1970;
 }
 
-template<class InputIterator, class T>
-bool find_b (InputIterator first, InputIterator last, const T& val)
-{
-    for (; first != last; ++first)
-        if (*first == val)
-            return true;
-    return false;
-}
 
-
-class Teachers;
-class Students;
-class Schools;
-class Classrooms;
-
-//a不调用增加，b调用增加
 
 #endif

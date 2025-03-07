@@ -1,6 +1,8 @@
 #ifndef TEACHERS
 #define TEACHERS
 #include "head"
+#include "Classrooms"
+#include "Students"
 
 using namespace std;
 
@@ -33,8 +35,7 @@ class Teachers : private enable_shared_from_this<Teachers>
 
     int 加分(shared_ptr<Students> 被操作学生, int 分数);
     int 减分(shared_ptr<Students> 被操作学生, int 分数);
-    int 添加班级a(shared_ptr<Classrooms> 班级);
-    int 添加班级b(shared_ptr<Classrooms> 班级);
+    int 添加班级(shared_ptr<Classrooms> 班级);
 };
 
 int Teachers::加分(shared_ptr<Students> 被操作学生, int 分数 = 1)
@@ -49,16 +50,10 @@ int Teachers::减分(shared_ptr<Students> 被操作学生, int 分数 = 1)
     return 0;
 }
 
-int Teachers::添加班级a(shared_ptr<Classrooms> 班级)
+int Teachers::添加班级(shared_ptr<Classrooms> 班级)
 {
     m_所在班级.push_back(班级);
-    return 0;
-}
-
-int Teachers::添加班级b(shared_ptr<Classrooms> 班级)
-{
-    m_所在班级.push_back(班级);
-    班级 -> 增加教师a(self);
+    班级 -> 增加教师(self);
     return 0;
 }
 
