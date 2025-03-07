@@ -1,4 +1,14 @@
 #include "../My_include/head"
+#include "../My_include/Students"
+#include "../My_include/Schools"
+#include "../My_include/Teachers"
+#include "../My_include/Classrooms"
+
+#include "Classrooms.cpp"
+#include "Schools.cpp"
+#include "Students.cpp"
+#include "Teachers.cpp"   
+
 using namespace std;
 
 int main()
@@ -6,14 +16,30 @@ int main()
     setlocale(LC_ALL, "zh_CN.UTF-8"); //使用UTF-8
 
     //智能指针 创建三个类
-    shared_ptr<Classrooms> Cl(new Classrooms());
-    shared_ptr<Students> St(new Students("zqh", NULL, Cl));
-    shared_ptr<Teachers> Te(new Teachers("主任"));
+    auto Cl = make_shared<Classrooms>();
+    auto St = make_shared<Students>("张三", Cl);
+    auto Te = make_shared<Teachers>("李四");
 
-    // Te->添加班级c(Cl);
+    St -> create_self();
+    Te -> create_self();
+
+    Te->添加班级(Cl);
+
+    St->更改班级(Cl);
+    Cl->增加学生(St);
+
+
+    auto Cls = make_shared<Classrooms>();
     
+    for (int i = 0; i < 20; i++)
+    {
+        auto Stu = make_shared<Students>("张三", Cls);
+        Stu->create_self();
 
-    St->减分();
+        Stu->更改班级(Cls);
+    }
+
+    St->减分(1);
     int *a = St->输出分数();
     cout << a[0] << " " << a[1] << endl;
 
@@ -22,8 +48,6 @@ int main()
     cout << a[0] << " " << a[1] << endl;
 
     Cl->打印其他();
-
-
 
     system("pause");
     return 0;
