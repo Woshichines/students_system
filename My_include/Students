@@ -1,8 +1,7 @@
-#ifndef STUDENTS
+﻿#ifndef STUDENTS
 #define STUDENTS
 
 #include "./head"
-#include "Classrooms"
 
 using namespace std;
 

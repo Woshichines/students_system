@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <cmath>
 #include <list>
@@ -26,7 +26,7 @@ class Students;
 class Schools; 
 class Classrooms;
 
-int 求级数()
+inline int 求级数()
 {
     long long mytime = time(NULL);
     long long y = 31536000;

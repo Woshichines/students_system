@@ -1,10 +1,10 @@
-#include "../My_include/Classrooms"
+﻿#include "../My_include/Classrooms"
 
 
 #ifndef CLASSROOMS_CPP
 #define CLASSROOMS_CPP
 
-int Classrooms::m_总学生数量 = 0;
+
 
 int Classrooms::create_self()
 {

@@ -1,19 +1,16 @@
-#include "../My_include/head"
+﻿#include "../My_include/head"
 #include "../My_include/Students"
 #include "../My_include/Schools"
 #include "../My_include/Teachers"
 #include "../My_include/Classrooms"
 
-#include "Classrooms.cpp"
-#include "Schools.cpp"
-#include "Students.cpp"
-#include "Teachers.cpp"   
-
 using namespace std;
 
+int Classrooms::m_总学生数量 = 0;
 int main()
 {   
-    setlocale(LC_ALL, "zh_CN.UTF-8"); //使用UTF-8
+    setlocale(LC_ALL, "zh_CN.utf-8"); //使用UTF-8
+    system("chcp 65001 > NUL");
 
     //智能指针 创建三个类
     auto Cl = make_shared<Classrooms>();
