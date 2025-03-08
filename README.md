@@ -31,6 +31,6 @@
 
 ## 构建和运行项目
 - 本项目使用CMake构建系统，支持Windows，暂未测试Linux和macOS。
-- 使用mingw-w64和clang64均可编译本项目。~~尚不支持是否可以使用Visual Studio编译。~~
+- 使用mingw-w64和clang64均可编译本项目。~~尚不清楚是否可以使用Visual Studio编译。~~
 
 ...
