@@ -13,6 +13,7 @@ int main()
     system("chcp 65001 > NUL");
 
     //智能指针 创建三个类
+
     auto Cl = make_shared<Classrooms>();
     auto St = make_shared<Students>("张三", Cl);
     auto Te = make_shared<Teachers>("李四");
@@ -27,13 +28,15 @@ int main()
 
 
     auto Cls = make_shared<Classrooms>();
+    vector<shared_ptr<Students>> Stu;
     
     for (int i = 0; i < 20; i++)
     {
-        auto Stu = make_shared<Students>("张三", Cls);
-        Stu->create_self();
+        Stu.push_back(make_shared<Students>("学生", Cl));
+        Stu[i]->create_self();
+        Cl -> 增加学生(Stu[i]);
 
-        Stu->更改班级(Cls);
+        Stu[i]->更改班级(Cls);
     }
 
     St->减分(1);

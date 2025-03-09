@@ -22,7 +22,7 @@ class Students : public enable_shared_from_this<Students>
 
     public:
     Students(string 姓名, 
-     shared_ptr<Classrooms> 班级,
+     shared_ptr<Classrooms> 班级 = NULL,
      shared_ptr<Schools> 校区 = NULL, 
      int 学号 = 0, 
      string 身份证号 = "", 

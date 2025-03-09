@@ -34,7 +34,10 @@ shared_ptr<Classrooms> Students::输出班级()
 
 int Students::更改班级(shared_ptr<Classrooms> 班级)
 {
-    m_班级 -> 删除学生(self);
+    if (m_班级 != NULL)
+    {
+        m_班级 -> 删除学生(self);
+    }
     m_班级 = 班级;
     m_班级 -> 增加学生(self);
 
