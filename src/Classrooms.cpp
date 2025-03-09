@@ -44,16 +44,16 @@ int Classrooms::删除学生(shared_ptr<Students> 学生)
     return 0;
 }
 
-int Classrooms::增加教师(shared_ptr<Teachers> 老师)
+int Classrooms::增加教师(shared_ptr<Teachers> 教师)
 {
-    m_教师.push_back(老师);
+    m_教师.push_back(教师);
     return 0;
 
 }
 
-int Classrooms::删除教师(shared_ptr<Teachers> 老师)
+int Classrooms::删除教师(shared_ptr<Teachers> 教师)
 {
-    m_教师.erase(remove(m_教师.begin(), m_教师.end(), 老师), m_教师.end());
+    m_教师.erase(remove(m_教师.begin(), m_教师.end(), 教师), m_教师.end());
     return 0;
 }
 

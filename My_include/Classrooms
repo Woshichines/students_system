@@ -25,10 +25,10 @@ class Classrooms : public enable_shared_from_this<Classrooms>
 
     public:
         Classrooms(
+                    string 班名 = to_string(求级数())+"级新建班级",
                     shared_ptr<Schools> 校区 = NULL,  
                     int 级数 = 求级数(), 
                     int 班数 = 0, 
-                    string 班名 = to_string(求级数())+"届新建班级",
                     vector<shared_ptr<Students>> 学生 = {},
                     vector<shared_ptr<Teachers>> 教师 = {})
                     :   m_校区(校区),

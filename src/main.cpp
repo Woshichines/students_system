@@ -10,13 +10,12 @@ int Classrooms::m_总学生数量 = 0;
 int main()
 {   
     setlocale(LC_ALL, "zh_CN.utf-8"); //使用UTF-8
-    system("chcp 65001 > NUL");
+    system("chcp 65001 > NUL"); //使用UTF-8,指定命令行为UTF-8
 
     //智能指针 创建三个类
-
-    auto Cl = make_shared<Classrooms>();
-    auto St = make_shared<Students>("张三", Cl);
-    auto Te = make_shared<Teachers>("李四");
+    shared_ptr<Classrooms> Cl(new Classrooms("2025级3班"));
+    shared_ptr<Students> St(new Students("张三", Cl));
+    shared_ptr<Teachers> Te(new Teachers("李四"));
 
     St -> create_self();
     Te -> create_self();

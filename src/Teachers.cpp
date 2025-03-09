@@ -28,7 +28,6 @@ int Teachers::减分(shared_ptr<Students> 被操作学生, int 分数 = 1)
 int Teachers::添加班级(shared_ptr<Classrooms> 班级)
 {
     m_所在班级.push_back(班级);
-    班级 -> 增加教师(self);
     return 0;
 }
 
