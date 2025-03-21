@@ -1,6 +1,6 @@
 ﻿#ifndef TEACHERS
 #define TEACHERS
-#include "head"
+#include "head.hpp"
 
 using namespace std;
 

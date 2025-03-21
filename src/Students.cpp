@@ -1,5 +1,5 @@
-﻿#include "../My_include/Students"
-#include "../My_include/Classrooms"
+﻿#include "../My_include/Students.hpp"
+#include "../My_include/Classrooms.hpp"
 
 #ifndef STUDENTS_CPP
 #define STUDENTS_CPP

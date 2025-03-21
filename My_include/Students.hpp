@@ -1,7 +1,7 @@
 ﻿#ifndef STUDENTS
 #define STUDENTS
 
-#include "./head"
+#include "head.hpp"
 
 using namespace std;
 

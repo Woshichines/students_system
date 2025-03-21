@@ -1,6 +1,6 @@
-﻿#include "../My_include/Teachers"
-#include "../My_include/Students"
-#include "../My_include/Classrooms"
+﻿#include "../My_include/Teachers.hpp"
+#include "../My_include/Students.hpp"
+#include "../My_include/Classrooms.hpp"
 
 #ifndef TEACHERS_CPP
 #define TEACHERS_CPP

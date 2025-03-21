@@ -1,7 +1,7 @@
 ﻿#ifndef CLASSROOMS
 #define CLASSROOMS
 
-#include "./head"
+#include "head.hpp"
 
 using namespace std;
 

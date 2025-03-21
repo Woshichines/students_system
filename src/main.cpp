@@ -1,8 +1,8 @@
-﻿#include "../My_include/head"
-#include "../My_include/Students"
-#include "../My_include/Schools"
-#include "../My_include/Teachers"
-#include "../My_include/Classrooms"
+﻿#include "../My_include/head.hpp"
+#include "../My_include/Students.hpp"
+#include "../My_include/Schools.hpp"
+#include "../My_include/Teachers.hpp"
+#include "../My_include/Classrooms.hpp"
 
 using namespace std;
 
